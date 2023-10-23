@@ -26,6 +26,8 @@ jobs:
             cd projects/Demo-actions/
             git pull origin main
         run: |
+            cd
+            cd projects/Demo-actions/
             pm2 delete all
             npm i
             npm run build
