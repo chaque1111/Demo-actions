@@ -23,13 +23,17 @@ jobs:
         key: ${{ secrets.SSH_PRIVATE_KEY }}
         port: 22
         script: |
-            cd projects/Demo-actions/
+            cd projects/Demo-actions
             git pull origin main
-        run: |
-            pm2 delete all
-            npm i
-            npm run build
+            export NVM_DIR=~/.nvm
+            export PATH=$PATH:/home/user/.npm-global/bin
+            source ~/.nvm/nvm.sh
+            npm install
+            pm2 delete all 
             pm2 start dist/main.js
+            
+           
+            
           
         
            
