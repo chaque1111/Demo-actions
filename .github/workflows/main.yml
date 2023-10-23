@@ -25,6 +25,8 @@ jobs:
         script: |
          cd projects/Demo-actions/
          git pull origin main
-         npm i
-         npm run build
+         - run: pm2 delete all
+         - run: npm i
+         - run: npm run build
+         - run: pm2 start dist/main.js
 
