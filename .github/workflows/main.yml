@@ -25,13 +25,10 @@ jobs:
         script: |
             cd projects/Demo-actions/
             git pull origin main
-        run: |
-            cd
-            cd projects/Demo-actions/
-            pm2 delete all
-            npm i
+            git status
+            npm install 
             npm run build
-            pm2 start dist/main.js
+            
           
         
            
