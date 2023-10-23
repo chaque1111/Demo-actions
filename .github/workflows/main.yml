@@ -29,6 +29,7 @@ jobs:
             export PATH=$PATH:/home/user/.npm-global/bin
             source ~/.nvm/nvm.sh
             npm install
+            npm run build
             pm2 delete all 
             pm2 start dist/main.js
             
