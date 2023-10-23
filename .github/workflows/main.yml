@@ -26,10 +26,11 @@ jobs:
             cd projects/Demo-actions
             git pull origin main
             export NVM_DIR=~/.nvm
+            export PATH=$PATH:/home/user/.npm-global/bin
             source ~/.nvm/nvm.sh
             npm install
-            - run: pm2 delete all 
-            - run: pm2 start dist/main.js
+            pm2 delete all 
+            pm2 start dist/main.js
             
            
             
