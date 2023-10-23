@@ -23,9 +23,13 @@ jobs:
         key: ${{ secrets.SSH_PRIVATE_KEY }}
         port: 22
         script: |
-         cd projects/Demo-actions/
-         pm2 delete all
-         git pull origin main
-         npm i
-         npm run build
-         pm2 start dist/main.js
+            cd projects/Demo-actions/
+            git pull origin main
+        run: |
+            pm2 delete all
+            npm i
+            npm run build
+            pm2 start dist/main.js
+          
+        
+           
