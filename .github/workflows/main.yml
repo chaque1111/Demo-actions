@@ -23,7 +23,11 @@ jobs:
         key: ${{ secrets.SSH_PRIVATE_KEY }}
         port: 22
         script: |
-           cd projects/Demo-actions/
+            - name: Setup Node.js
+            uses: actions/setup-node@v2
+            with:
+            node-version: 14
+            cd projects/Demo-actions/
             git pull origin main
             npm install pm2 -g
             pm2 delete all
