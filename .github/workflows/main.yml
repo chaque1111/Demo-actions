@@ -28,6 +28,8 @@ jobs:
             export NVM_DIR=~/.nvm
             source ~/.nvm/nvm.sh
             npm install
+            - run: pm2 delete all 
+            - run: pm2 start dist/main.js
             
            
             
