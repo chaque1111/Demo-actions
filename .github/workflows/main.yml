@@ -23,11 +23,8 @@ jobs:
         key: ${{ secrets.SSH_PRIVATE_KEY }}
         port: 22
         script: |
-            cd projects/Demo-actions/
             git pull origin main
-            git status
-            npm install 
-            npm run build
+           
             
           
         
