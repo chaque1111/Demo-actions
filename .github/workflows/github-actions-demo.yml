@@ -1,0 +1,29 @@
+name: GitHub Actions Demo
+run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
+on: [push]
+jobs:
+  Explore-GitHub-Actions:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: pm2 stop
+        run: pm2 delete all
+
+      - name: change directory
+        run: cd projects/Demo-actions
+        
+      - name: Install dependencies
+        run: npm install
+        
+      - name: build
+        run: npm run build
+
+      - name: pm2 start
+        run: pm2 start dist/main.js
+
+
+        
+
+      
